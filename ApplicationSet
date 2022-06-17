@@ -8,7 +8,7 @@ spec:
     - list: 
         elements: 
           - cluster: argo
-            url: 
+            url: https://argo-dns-7cbeacc8.hcp.centralindia.azmk8s.io:443
           - cluster: scanners-test
             url: https://scanners-test-dns-078d9dad.hcp.eastus2.azmk8s.io:443
   template: 
