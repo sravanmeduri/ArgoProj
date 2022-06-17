@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata: 
+  name: sample
+  namespace: argocd
+spec: 
+  generators: 
+    - list: 
+        elements: 
+          - cluster: first
+            url: https://first-dns-6beca6c9.hcp.centralindia.azmk8s.io:443
+          - cluster: second
+            url: https://second-dns-15f7ed70.hcp.centralindia.azmk8s.io:443
+  template: 
+    metadata: 
+      name: "{{cluster}}-sample"
+    spec: 
+      destination: 
+        namespace: myapp
+        server: "{{url}}"
+      project: default
+      source: 
+        path: "dev/{{cluster}}"
+        repoURL: "https://github.com/sravanmeduri/ArgoProj.git”
+        targetRevision: master
+      syncPolicy: 
+        automated: 
+          prune: true
+          selfHeal: true
+        syncOptions: 
+          - CreateNamespace=true
+
