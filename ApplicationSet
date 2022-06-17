@@ -7,10 +7,10 @@ spec:
   generators: 
     - list: 
         elements: 
-          - cluster: first
-            url: https://first-dns-6beca6c9.hcp.centralindia.azmk8s.io:443
-          - cluster: second
-            url: https://second-dns-15f7ed70.hcp.centralindia.azmk8s.io:443
+          - cluster: argo
+            url: 
+          - cluster: scanners-test
+            url: https://scanners-test-dns-078d9dad.hcp.eastus2.azmk8s.io:443
   template: 
     metadata: 
       name: "{{cluster}}-sample"
