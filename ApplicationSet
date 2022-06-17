@@ -22,7 +22,7 @@ spec:
       source: 
         path: "dev/{{cluster}}"
         repoURL: "https://github.com/sravanmeduri/Argoproj.git”
-        targetRevision: master
+        targetRevision: main
       syncPolicy: 
         automated: 
           prune: true
