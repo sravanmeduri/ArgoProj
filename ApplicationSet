@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata: 
   name: sample
-  namespace: argo
+  namespace: argocd
 spec: 
   generators: 
     - list: 
@@ -16,7 +16,7 @@ spec:
       name: "{{cluster}}-sample"
     spec: 
       destination: 
-        namespace: myapp
+        namespace: sample-deploy
         server: "{{url}}"
       project: default
       source: 
