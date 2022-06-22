@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata: 
-  name: sample
+  name: webstack
   namespace: argocd
 spec: 
   generators: 
@@ -13,10 +13,10 @@ spec:
             url: https://demo-dns-299e5058.hcp.eastus.azmk8s.io:443
   template: 
     metadata: 
-      name: "{{cluster}}-sample"
+      name: "{{cluster}}-webstack"
     spec: 
       destination: 
-        namespace: sample-deploy
+        namespace: webstack
         server: "{{url}}"
       project: default
       source: 
