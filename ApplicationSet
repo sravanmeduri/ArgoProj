@@ -21,7 +21,7 @@ spec:
       project: default
       source: 
         path: "dev/{{cluster}}"
-        repoURL: "https://github.com/sravanmeduri/Argoproj.git”
+        repoURL: "https://github.com/sravanmeduri/ArgoProject.git"
         targetRevision: main
       syncPolicy: 
         automated: 
